@@ -22,7 +22,7 @@ Config {
   -- of your screen to make it play nicely with stalonetray, which we
   -- want to be taking up the remainer of the space on the right side
   -- of your screen.
-     position = TopW L 100,
+     position = TopW L 97,
 
   -- list of commands which gather information about your system for
   -- presentation in the bar. 
@@ -44,7 +44,9 @@ Config {
 
     -- Gather and format memory usage information
     Run Memory [
-       "-t","Mem: <usedratio>%"
+       "-t","Mem: <usedratio>%",
+       "-H","50",
+       "--high","red"
     ] 10,
 
     -- Date formatting
@@ -90,5 +92,5 @@ Config {
 
    -- Overall template for the layout of the xmobar contents. Note that
    -- space is significant and can be used to add padding.
-   template = "%StdinReader% }{ %cpu% | %dynnetwork% |%battery% | %ping% | %vpnstatus% | <fc=#e6744c>%date%</fc>"
+   template = "%StdinReader% }{ %cpu% | %memory% | %dynnetwork% |%battery% | %ping% | %vpnstatus% | <fc=#e6744c>%date%</fc>"
 }

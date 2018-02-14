@@ -27,7 +27,15 @@ if [ -z "$(pgrep parcellite)" ] ; then
     parcellite &
 fi
 
+xmodmap -e 'keycode 66 = Control_L'
+xmodmap -e 'clear Lock'
+xmodmap -e 'add Control = Control_L'
+
 xsetroot -cursor_name left_ptr
+
+stalonetray &
+
+wicd-client --tray &
 
 gnome-screensaver &
 
