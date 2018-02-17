@@ -27,6 +27,10 @@ if [ -z "$(pgrep parcellite)" ] ; then
     parcellite &
 fi
 
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+xrdb -merge .Xresources
+
 xmodmap -e 'keycode 66 = Control_L'
 xmodmap -e 'clear Lock'
 xmodmap -e 'add Control = Control_L'
